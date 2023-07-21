@@ -15,7 +15,7 @@ const _IMAGE_INPUT_CONTAINER_IDS = [
 ];
 
 const getSelectedImage2ImageTab = () => {
-    const selectedButton = gradioApp().getElementById('mode_img2img').querySelector('button.selected');
+    const selectedButton = gradioApp().getElementById('mode_img2img').querySelectorAll('button')[2];
     const allButtons = gradioApp().getElementById('mode_img2img').querySelectorAll('button');
     const selectedIndex = Array.prototype.indexOf.call(allButtons, selectedButton);
     return selectedIndex;
@@ -24,7 +24,7 @@ const getSelectedImage2ImageTab = () => {
 const getCurrentImage = () => {
     const currentTabIndex = getSelectedImage2ImageTab();
     const currentTabImageId = _IMAGE_INPUT_CONTAINER_IDS[currentTabIndex];
-    return document.getElementById(currentTabImageId).querySelector('img');
+    return gradioApp().querySelector('#img2maskimg img')
 }
 
 const roundToClosestMultiple = (num, multiple) => {
