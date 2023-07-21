@@ -468,7 +468,7 @@ document.addEventListener("DOMContentLoaded", () => {
     AspectRatioController.observeStartup(
         "__img2imgAspectRatioController",
         "img2img",
-        [_OFF, _LOCK, _IMAGE],
+        [_IMAGE, _LOCK, _OFF],
         postImageControllerSetupFunction
     );
 });
